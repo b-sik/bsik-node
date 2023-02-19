@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "start:prod": "pm2 start ./bin/www",
     "dev": "nodemon ./bin/www",
-    "server": "DEBUG=bsik-node:* npm run dev"
+    "dev:debug": "DEBUG=bsik-node:* npm run dev"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
