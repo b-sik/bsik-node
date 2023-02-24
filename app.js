@@ -5,7 +5,7 @@ const path = require('path');
 const logger = require('morgan');
 const helmet = require('helmet');
 
-const programmingLanguagesRouter = require('./routes/programmingLanguages');
+const visitorLogRouter = require('./routes/visitorLog');
 const indexRouter = require('./routes/index');
 // const usersRouter = require('./routes/users');
 
@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
 app.use('/', indexRouter);
-app.use('/programming-languages', programmingLanguagesRouter);
+app.use('/visitor-log', visitorLogRouter);
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
