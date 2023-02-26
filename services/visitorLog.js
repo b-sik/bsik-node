@@ -3,9 +3,9 @@ const db = require('./db');
 async function create(visitorLog) {
   const result = await db.query(
     `INSERT INTO bsik_dev_visitors
-    (ip_addr, timestamp, uid) 
+    (ip_addr, timestamp, uid, origin) 
     VALUES 
-    ("${visitorLog.ip_addr}", "${visitorLog.timestamp}", "${visitorLog.uid}")`
+    ("${visitorLog.ip_addr}", "${visitorLog.timestamp}", "${visitorLog.uid}", "${visitorLog.origin}")`
   );
 
   let message = 'Error in creating visitor log';
@@ -16,7 +16,6 @@ async function create(visitorLog) {
 
   return { message };
 }
-
 
 module.exports = {
   create,
