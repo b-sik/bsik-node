@@ -2,7 +2,7 @@ const db = require('./db');
 
 async function create(visitorLog) {
   const result = await db.query(
-    `INSERT INTO bsik_dev_visitors
+    `INSERT INTO ${process.env.VISITOR_LOG_TABLE}
     (ip_addr, timestamp, uid, origin) 
     VALUES 
     ("${visitorLog.ip_addr}", "${visitorLog.timestamp}", "${visitorLog.uid}", "${visitorLog.origin}")`
